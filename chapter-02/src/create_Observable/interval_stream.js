@@ -17,3 +17,19 @@ const theObserver = {
 }
 source$.subscribe(theObserver);
 
+
+
+
+const ob=new Observable(observer=>{
+  let i=10;
+  const interval=setInterval(()=>{
+      observer.next(i++);
+      if(i>15){
+        clearInterval(interval);
+      }
+  });
+});
+
+ob.subscribe(res=>{
+  console.log(res);
+});

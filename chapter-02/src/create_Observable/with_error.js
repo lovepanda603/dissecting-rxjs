@@ -13,5 +13,12 @@ const theObserver = {
   error: err => console.log(err),
   complete: () => console.log('No More Data'),
 }
-source$.subscribe(theObserver);
+//source$.subscribe(theObserver);
+source$.subscribe(res=>{
+    console.log(res);
+},(error)=>{
+    console.log(error);
+},(complete)=>{
+  console.log("完成了");
+});
 
